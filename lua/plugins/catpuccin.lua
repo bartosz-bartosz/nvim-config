@@ -7,6 +7,7 @@ return {
     config = function()
       require("catppuccin").setup {
         -- configurations
+        flavour = "latte",
       }
     end,
     -- or just use opts table
