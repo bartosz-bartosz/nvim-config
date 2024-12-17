@@ -14,7 +14,7 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
     -- { import = "lazyvim.plugins.extras.lang.json" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
-    { import = "lazyvim.plugins.extras.dap.core"},
+    { import = "lazyvim.plugins.extras.dap.core" },
     -- import/override with your plugins
     { import = "plugins" },
   },
@@ -45,3 +45,21 @@ require("lazy").setup({
     },
   },
 })
+
+require("dap-python").setup("python3")
+
+require("dap").configurations = {
+  python = {
+    {
+      type = "python",
+      request = "launch",
+      name = "Launch file",
+      program = "${file}",
+      pythonPath = "python",
+      cwd = "/",
+      env = {
+        PYTHONPATH = "${workspaceFolder}",
+      },
+    },
+  },
+}
