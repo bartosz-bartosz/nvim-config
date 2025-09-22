@@ -4,3 +4,4 @@
 --
 
 vim.g.autoformat = false
+vim.g.ai_cmp = true

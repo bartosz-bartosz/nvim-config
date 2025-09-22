@@ -2,11 +2,15 @@ return {
 
   {
     "zbirenbaum/copilot.lua",
-    optional = true,
-    config = function()
-      require("copilot").setup({
-        copilot_model = "claude-4-opus",
-      })
-    end,
+    cmd = "Copilot",
+    event = "InsertEnter",
+    opts = {
+      suggestion = { enabled = false },
+      panel = { enabled = false },
+      filetypes = {
+        markdown = true,
+        help = true,
+      },
+    },
   },
 }
